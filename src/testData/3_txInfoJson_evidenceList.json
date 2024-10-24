@@ -1,0 +1,42 @@
+{
+  "payload": {
+    "chain_id": "chain1",
+    "tx_id": "179ca990d4da1134ca9fac9b94fddf44fed1d6f02318420e9877f04beabdb018",
+    "timestamp": 1701421198,
+    "contract_name": "evidence21",
+    "method": "Evidence",
+    "parameters": [
+      {
+        "key": "hash",
+        "value": "YTQxMg=="
+      },
+      {
+        "key": "metadata",
+        "value": "eyJoYXNoVHlwZSI6ImZpbGUiLCJoYXNoQWxnb3JpdGhtIjoic2hhMjU2IiwidXNlcm5hbWUiOiJ0YWlmdSIsInRpbWVzdGFtcCI6IjE2NzIwNDg4OTIiLCJwcm92ZVRpbWVzdGFtcCI6IiJ9"
+      },
+      {
+        "key": "id",
+        "value": "MDMzMg=="
+      }
+    ],
+    "limit": {
+      "gas_limit": 130000
+    }
+  },
+  "sender": {
+    "signer": {
+      "org_id": "wx-org1.chainmaker.org",
+      "member_type": 1,
+      "member_info": "LK4/KplYsQcFU2All0UxorspVALdt/tgHuZ8QxiME2M="
+    },
+    "signature": "MEUCIHlU80bBo3o0lYUobNFYXk00MSITAlM8yG1sSwh/ER4VAiEA+IVz4tpvHD7KXx6eVzSnMxyMRRTGJfosSUqM3YKqLHk="
+  },
+  "result": {
+    "contract_result": {
+      "result": "b2s=",
+      "message": "Success",
+      "gas_used": 157
+    },
+    "rw_set_hash": "bI2kFd0WvcoylT5jthVFvwtKolfrjI7T079o7GMmnmg="
+  }
+}

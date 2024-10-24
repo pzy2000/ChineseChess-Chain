@@ -1,0 +1,14 @@
+{
+  "171262347a59fded92021a32421a5dad05424e03":[
+    {
+      "AddrType":0,
+      "OwnerAddr":"171262347a59fded92021a32421a5dad05424e03",
+      "ContractAddr":"aba31ce4cd49f08073d2f115eb12610544242123",
+      "ContractName":"goErc20_1",
+      "Amount":"0.0001",
+      "Decimals":8,
+      "BlockHeight":12,
+      "ContractType":"CMDFA"
+    }
+  ]
+}

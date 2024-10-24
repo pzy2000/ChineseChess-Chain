@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  cm_explorer_db:
+    image: yandex/clickhouse-server:latest
+    volumes:
+      - explorer_db_data:/var/lib/clickhouse
+      #- ./clickhouse_logs:/var/log/clickhouse-server
+    restart: always
+    ports:
+      - "8123:8123"
+    environment:
+      CLICKHOUSE_USER: chainmaker
+      CLICKHOUSE_PASSWORD: "chainmaker"
+
+  redis: # 添加新的Redis服务定义
+    image: redis:latest
+    volumes:
+      - redis_data:/data
+    restart: always
+    command: redis-server --requirepass explorer_redis  # 添加command字段并设置requirepass选项
+
+  cm_explorer_server:
+    image: hub-dev.cnbn.org.cn/opennet/chainmaker-explorer-backend:develop_dongxuliang
+    depends_on:
+      - cm_explorer_db
+      - redis
+    ports:
+      - "9997:9997"
+    restart: always
+    volumes:
+      - ./cm_explorer_server/config-clickhouse.yml:/chainmaker-explorer-backend/configs/config.yml
+      - ./cm_explorer_server/erc20_abi.json:/chainmaker-explorer-backend/configs/erc20_abi.json
+      - ./cm_explorer_server/erc721_abi.json:/chainmaker-explorer-backend/configs/erc721_abi.json
+      - ./cm_explorer_server/crypto-config:/chainmaker-explorer-backend/configs/crypto-config
+      - ./log/:/chainmaker-explorer-backend/log/
+
+  cm_explorer_web:
+    depends_on:
+      - cm_explorer_server
+    image: hub-dev.cnbn.org.cn/opennet/explorer_front:latest
+    ports:
+      - "9996:8080"
+    restart: always
+    volumes:
+      - ./cm_explorer_web/default.conf:/etc/nginx/conf.d/default.conf  # 添加这一行
+
+volumes:
+  explorer_db_data: { }
+  redis_data: { }

@@ -1,0 +1,48 @@
+web:
+  # Web监听网卡地址
+  address:  0.0.0.0
+  # Web监听端口
+  port:     9998
+  # 是否开启跨域:
+  cross_domain:  true
+  # prometheus监控端口
+  monitor_port: 13582
+  # 登录过期时间,单位：天
+  login_expire_time: 7
+
+pprof:
+  is_open: false
+  port: 16660
+
+#mysql配置信息
+db:
+ host: cm_explorer_db
+ port: 3306
+ username: root
+ password: chainmaker
+ #数据库
+ database: chainmaker_dquery
+ #db类型： ClickHouse / Mysql
+ db_provider: Mysql
+
+db_redis:
+  #cluster:集群/node：单机
+  type: node
+  host:
+    - redis:6379
+  username:
+  password: explorer_redis
+  prefix: dquery_1
+
+chainmaker_db:
+  host: cm_explorer_db
+  port: 3306
+  username: root
+  password: chainmaker
+  database: chainmaker_explorer_test
+  db_provider: Mysql
+  #查询超时时间，单位秒
+  query_timeout: 300
+  chain_list:
+    - chain_id: chainmaker_pk
+      prefix: chainmaker_pk

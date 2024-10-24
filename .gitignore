@@ -1,0 +1,13 @@
+.idea
+*.log*
+cover.out
+/k8s-181/
+/k8s-test-181/
+scripts/chainmaker-browser.bin
+main
+src/chainmaker-browser
+src/main-browser
+src/output
+*.zip
+*.gz
+*.tar

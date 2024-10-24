@@ -1,0 +1,51 @@
+{
+  "cross_chain_id": "0",
+  "cross_chain_name": "cross chain save, main to son",
+  "cross_chain_flag": "cross chain save, main to son",
+  "from": "MAIN_GATEWAY_ID-relay-1",
+  "cross_chain_msg": [
+    {
+      "gateway_id": "0",
+      "chain_rid": "chainmaker001",
+      "contract_name": "crossChainSaveQuery",
+      "method": "save",
+      "parameter": "{\"key\":\"main_son_save_key\",\"value\":\"main_son_save_value\"}",
+      "confirm_info": {
+        "chain_rid": "chainmaker001",
+        "contract_name": "crossChainSaveQuery",
+        "method": "saveState",
+        "parameter": "{\"key\":\"main_son_save_key\",\"state\":\"confirmEnd\"}"
+      },
+      "cancel_info": {
+        "chain_rid": "chainmaker001",
+        "contract_name": "crossChainSaveQuery",
+        "method": "saveState",
+        "parameter": "{\"key\":\"main_son_save_key\",\"state\":\"cancelEnd\"}"
+      }
+    }
+  ],
+  "first_tx_content": {
+    "tx_content": {
+      "tx_id": "17b838319d4dadeccae462507bdef92451cdc0e1e01c4eddbef2ffd209c48f3d",
+      "tx": "Co8LCrwBCgZjaGFpbjEaQDE3YjgzODMxOWQ0ZGFkZWNjYWU0NjI1MDdiZGVmOTI0NTFjZGMwZTFlMDFjNGVkZGJlZjJmZmQyMDljNDhmM2Qg9Pf/rgYyE2Nyb3NzQ2hhaW5TYXZlUXVlcnk6DmNyb3NzQ2hhaW5TYXZlQhgKA2tleRIRbWFpbl9zb25fc2F2ZV9rZXlCHAoFdmFsdWUSE21haW5fc29uX3NhdmVfdmFsdWVCDQoIY29uZmlnSWQSATUShAIKtwEQAhqyAS0tLS0tQkVHSU4gUFVCTElDIEtFWS0tLS0tCk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRUFxdFlRNjZMWEphZ3M4NEdpQW9OOURhd2NXdm8KTm5UQjF3ektIUSthNmVUNzVrZ1JDV2tvbENXK0dqaEhtanVwZGhudytYbitFakxjK3prNnNvQ0dyZz09Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQoSSDBGAiEAyxgkbVUmmWKQnl9S0jMifm3i7f3YG7pY3xEHj+t2Q/QCIQDTW+7D+exhaTtfvmjfTQdKWB8M5YyrejHTEdgkJJ/OJyLGBxKhBxIWY3Jvc3NDaGFpblNhdmUgc3VjY2VzcxoHU3VjY2VzcyCYAir6BgoTQ1JPU1NfQ0hBSU5fVFJJR0dFUhJAMTdiODM4MzE5ZDRkYWRlY2NhZTQ2MjUwN2JkZWY5MjQ1MWNkYzBlMWUwMWM0ZWRkYmVmMmZmZDIwOWM0OGYzZBoSY3Jvc3NDaGFpbkNvbnRyYWN0KowGR2gxamNtOXpjeUJqYUdGcGJpQnpZWFpsTENCdFlXbHVJSFJ2SUhOdmJpSWRZM0p2YzNNZ1kyaGhhVzRnYzJGMlpTd2diV0ZwYmlCMGJ5QnpiMjRxclFJS0FUQVNEV05vWVdsdWJXRnJaWEl3TURFYUUyTnliM056UTJoaGFXNVRZWFpsVVhWbGNua2lCSE5oZG1VeU9Yc2lhMlY1SWpvaWJXRnBibDl6YjI1ZmMyRjJaVjlyWlhraUxDSjJZV3gxWlNJNkltMWhhVzVmYzI5dVgzTmhkbVZmZG1Gc2RXVWlmVkpoRWcxamFHRnBibTFoYTJWeU1EQXhHaE5qY205emMwTm9ZV2x1VTJGMlpWRjFaWEo1SWdsellYWmxVM1JoZEdVcU1Ic2lhMlY1SWpvaWJXRnBibDl6YjI1ZmMyRjJaVjlyWlhraUxDSnpkR0YwWlNJNkltTnZibVpwY20xRmJtUWlmVnBnRWcxamFHRnBibTFoYTJWeU1EQXhHaE5qY205emMwTm9ZV2x1VTJGMlpWRjFaWEo1SWdsellYWmxVM1JoZEdVcUwzc2lhMlY1SWpvaWJXRnBibDl6YjI1ZmMyRjJaVjlyWlhraUxDSnpkR0YwWlNJNkltTmhibU5sYkVWdVpDSjlPaGROUVVsT1gwZEJWRVZYUVZsZlNVUXRjbVZzWVhrdE1VcGVFZ3B0WVdsdUlHTm9ZV2x1R2hOamNtOXpjME5vWVdsdVUyRjJaVkYxWlhKNUlnbHpZWFpsVTNSaGRHVXFNSHNpYTJWNUlqb2liV0ZwYmw5emIyNWZjMkYyWlY5clpYa2lMQ0p6ZEdGMFpTSTZJbU52Ym1acGNtMUZibVFpZlZKZEVncHRZV2x1SUdOb1lXbHVHaE5qY205emMwTm9ZV2x1VTJGMlpWRjFaWEo1SWdsellYWmxVM1JoZEdVcUwzc2lhMlY1SWpvaWJXRnBibDl6YjI1ZmMyRjJaVjlyWlhraUxDSnpkR0YwWlNJNkltTmhibU5sYkVWdVpDSjlXQUU9GiAn+R+8IlXloQjsZd202SfyiDIEM/EM3/hNDtHPxnh/hhAtKPT3/64G",
+      "gateway_id": "MAIN_GATEWAY_ID-relay-1",
+      "chain_rid": "MAIN_GATEWAY_ID-relay-1",
+      "block_height": 45
+    }
+  },
+  "state": 1,
+  "confirm_info": {
+    "chain_rid": "main chain",
+    "contract_name": "crossChainSaveQuery",
+    "method": "saveState",
+    "parameter": "{\"key\":\"main_son_save_key\",\"state\":\"confirmEnd\"}"
+  },
+  "cancel_info": {
+    "chain_rid": "main chain",
+    "contract_name": "crossChainSaveQuery",
+    "method": "saveState",
+    "parameter": "{\"key\":\"main_son_save_key\",\"state\":\"cancelEnd\"}"
+  },
+  "timeout": 1000,
+  "cross_type": 1
+}

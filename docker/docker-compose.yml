@@ -1,0 +1,59 @@
+version: "3.9"
+
+services:
+  cm_explorer_db:
+    image: mysql:8.0
+    volumes:
+      #- explorer_db_data:/var/lib/mysql
+      - /data1/explorer_db/mysql:/var/lib/mysql  # 修改这一行
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: chainmaker
+      # MYSQL_USER: chainmaker
+      # MYSQL_PASSWORD: Baec&chainmaker
+      # MYSQL_DATABASE: chainmaker_explorer_dev
+    command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
+
+  redis:
+    image: redis:latest
+    volumes:
+      #- redis_data:/data
+      - /data1/explorer_db/redis:/data  # 修改这一行
+    restart: always
+    command: redis-server --requirepass explorer_redis
+
+  cm_explorer_server:
+    image: chainmakerofficial/explorer-backend:v2.3.5
+    depends_on:
+      - cm_explorer_db
+      - redis
+    ports:
+     - "9997:9997"
+    restart: always
+    volumes:
+      - ./cm_explorer_server/config.yml:/chainmaker-explorer-backend/configs/config.yml
+      - ./cm_explorer_server/crypto-config:/chainmaker-explorer-backend/configs/crypto-config
+      - ./cm_explorer_server/erc20_abi.json:/chainmaker-explorer-backend/configs/erc20_abi.json
+      - ./cm_explorer_server/erc721_abi.json:/chainmaker-explorer-backend/configs/erc721_abi.json
+
+  cm_dquery_server:
+    image: chainmakerofficial/dquery-backend:v2.3.5
+    depends_on:
+      - cm_explorer_db
+      - redis
+    ports:
+      - "9998:9998"
+    restart: always
+    volumes:
+      - ./cm_dquery/config.yml:/dquery-backend/configs/config.yml
+      - ./log/:/dquery-backend/log/
+
+  cm_explorer_web:
+    depends_on:
+      - cm_explorer_server
+    image: chainmakerofficial/explorer-web:v2.3.5
+    ports:
+      - "9996:9996"
+    restart: always
+    volumes:
+      - ./cm_explorer_web/default.conf:/etc/nginx/conf.d/default.conf

@@ -1,0 +1,72 @@
+{
+  "tx_id": "17b838c4978c133acadcfa6751712caf37e064a82cba4ea0833bba029bfc3eca",
+  "tx_reads": [
+    {
+      "key": "YmgxMA==",
+      "value": "ogM9EDR10KwnaQ06Nq65tzIcH5EBn9JnZIxlzph+VvY=",
+      "contract_name": "official_spv0chainmaker001"
+    }
+  ],
+  "tx_writes": [
+    {
+      "key": "YmgxMQ==",
+      "value": "tGRBS0Y895s6QvsoGvL0yrcuTYXDVBs7JButIGzbxaI=",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "YmgxMg==",
+      "value": "4uywFbwDXbjXnHes/pMFJSgvIVVDhjGASxY6JPgFUqM=",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "YmgxMw==",
+      "value": "/cpNyuqQ9GxhE93Z/F0fN9b8JXLznc1oLaT10OBKaZo=",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "YmgxNA==",
+      "value": "frSsX5XI6/pckmpd7WidJskAaofvv9OKrKKIGwF1U7I=",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "YnYxMQ==",
+      "value": "MjAzMDMwMA==",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "YnYxMg==",
+      "value": "MjAzMDMwMA==",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "YnYxMw==",
+      "value": "MjAzMDMwMA==",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "YnYxNA==",
+      "value": "MjAzMDMwMA==",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "bXIxMQ==",
+      "value": "6G3PUFJvr5YY89gu8YrhS5X67h1knA7D+H5hBwa5gZ4=",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "bXIxMg==",
+      "value": "MUmnWOxbNe0ji3IHMdt1SMbseZ35LyNXWpgfjjzkWbs=",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "bXIxMw==",
+      "value": "qCr0o+p/yX37Bqq/9m5lWJDuD00COtedxWyTKP6u/k4=",
+      "contract_name": "official_spv0chainmaker001"
+    },
+    {
+      "key": "bXIxNA==",
+      "value": "8hAtv0uo1MhLPQcsAM7k0fMOomhyhSqx3EuSayi/s6A=",
+      "contract_name": "official_spv0chainmaker001"
+    }
+  ]
+}

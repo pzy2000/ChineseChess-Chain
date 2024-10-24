@@ -1,0 +1,14 @@
+{
+  "18fc4e7429af8419d5bb307e34db398b9a2331c6":[
+    {
+      "AddrType":0,
+      "OwnerAddr":"18fc4e7429af8419d5bb307e34db398b9a2331c6",
+      "ContractAddr":"aba31ce4cd49f08073d2f115eb12610544242456",
+      "ContractName":"goErc721_1",
+      "Amount":"34",
+      "Decimals":0,
+      "BlockHeight":13,
+      "ContractType":"CMNFA"
+    }
+  ]
+}

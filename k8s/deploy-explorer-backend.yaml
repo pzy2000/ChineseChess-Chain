@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: explorer-backend-formal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: explorer-backend-formal
+  template:
+    metadata:
+      labels:
+        app: explorer-backend-formal
+    spec:
+      containers:
+        - name: explorer-backend-formal
+          image: chainmaker1.tencentcloudcr.com/opennet/chainmaker-explorer-backend:develop_ida_ldx
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: configmap-config-volume
+              mountPath: /chainmaker-explorer-backend/configs
+            - name: configmap-client-volume
+              mountPath: /chainmaker-explorer-backend/configs/crypto-config/node1/user/client1
+      volumes:
+        - name: configmap-config-volume
+          configMap:
+            name: configmap-config
+        - name: configmap-client-volume
+          configMap:
+            name: configmap-client
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: explorer-backend-formal-service
+spec:
+  selector:
+    app: explorer-backend-formal
+  ports:
+    - protocol: TCP
+      port: 17773
+      targetPort: 9999

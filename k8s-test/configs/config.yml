@@ -1,0 +1,164 @@
+web:
+  address:  0.0.0.0
+  port:     9999
+  #跨域
+  cross_domain:     true
+  #对外暴露地址（公网）
+  third_apply_url:  http://subchain-service:8888
+  #主子链服务地址
+  relay_cross_chain_url:  http://127.0.0.1
+  # 开放测试网络地址（局域网）  ip地址不能以/结尾
+  testnet_url:  http://172.21.0.12:8888
+  # 开放联盟链后台地址
+  opennet_url: http://opennet-manage-backend:17777/opennetManageBackend/formalnetPk
+  # prometheus监控端口
+  monitor_port: 13582
+  #管理后台密钥
+  manage_backend_api_key: AdSGavFKmbrzesqkZPQaVD2UGnqbbC
+
+#db:
+#  host: 10.15.5.220
+#  port: 6446
+#  username: root
+#  password: wxbaas@123
+#  #数据库
+#  database: explorer_test_2
+#  # 表/索引 名称前缀
+#  prefix: test_2_
+#  #db类型： ClickHouse / Mysql
+#  db_provider: Mysql
+
+#db_redis:
+#  db: 0
+#  host: 10.15.5.93:6379
+#  username: ""
+#  password: wxbaas@123
+#  # 缓存前缀
+#  prefix: test_2_2
+
+pprof:
+  is_open: true
+  port: 16660
+
+db:
+  host: 10.15.5.93
+  port: 9000
+  username: default
+  password: wxbaas@123
+  #数据库
+  database: explorer_test_4
+  # 表/索引 名称前缀
+  prefix: test_1_
+  #db类型： ClickHouse / Mysql
+  db_provider: ClickHouse
+  #批量插入最大字节数（单位kb），默认256kb
+  max_byte_size: 1024
+  #单表插入，更新线程池最大并发数，默认10，最大50.
+  max_pool_size: 10
+
+db_redis:
+  db: 0
+  host: 10.15.5.93:6379
+  username: ""
+  password: wxbaas@123
+  # 缓存前缀
+  prefix: test_4_1
+
+
+# 是否订阅链
+subscribe:
+  enable: true
+  evm_erc20_abi_file: "../configs/erc20_abi.json"
+  evm_erc721_abi_file: "../configs/erc721_abi.json"
+
+# 是否开启右上方订阅选项
+chain:
+  show_config: false
+  #是否主链
+  is_main_chain: false
+  #主链名称
+  chain_name: 国家级区块链网络主网络
+
+# 订阅链配置
+chains:
+  - chain_id: chainmaker_testnet_pk
+    auth_type: public
+    org_id:
+    hash_type: SM3
+    user:
+      priv_key_file: ../configs/crypto-config/node1/user/client1/client1.key
+      cert_file:
+    nodes:
+      - tls: false
+        tls_host: chainmaker.org
+        ca_paths:
+        remotes: 10.15.5.22:17301
+      - tls: false
+        tls_host: chainmaker.org
+        ca_paths:
+        remotes: 10.15.5.28:17301
+      - tls: false
+        tls_host: chainmaker.org
+        ca_paths:
+        remotes: 10.15.5.43:17301
+#      - tls: false
+#        tls_host: chainmaker.org
+#        ca_paths:
+#        remotes: testnet.cnbn.org.cn:12391
+#      - tls: false
+#        tls_host: chainmaker.org
+#        ca_paths:
+#        remotes: testnet.cnbn.org.cn:12392
+
+# 敏感词过滤腾讯云服务
+sensitive:
+  enable: false
+  secret_id: 123456
+  secret_key: 123456
+
+
+# 告警
+alarmer:
+  # 开启企业微信告警
+  wechat_enable: false
+  # 开启钉钉告警
+  ding_enable: false
+  # 企业应用token
+  wechat_access_token: 123456
+  # 钉钉应用token
+  ding_access_token: 123456
+  # 告警信息前缀
+  prefix: 123456
+
+# 监控（告警信息请填写alarmer）
+monitor:
+  # 是否启用
+  enable: false
+  # 敏感词过滤预警返回最大交易数
+  safe_word_limit: 10
+  # 单用户短期大批量交易监控
+  monitor_tx:
+    # 间隔期内用户最大发交易数
+    max_tx_num: 10000
+    # 单次查询交易数
+    tx_limit: 1000
+  # 节点间允许最大区块高度差
+  max_height_diff: 10
+  # 最大尝试连接节点次数
+  try_conn_num: 3
+  # 触发间隔 (min) 至少10min
+  interval: 1
+  # 监控节点信息
+  chains:
+    - chain_id: chainmaker_testnet_pk
+      auth_type: public
+      org_id:
+      hash_type: SM3
+      user:
+        priv_key_file: ../configs/crypto-config/node1/user/client1/client1.key
+        cert_file:
+      nodes:
+        - tls: false
+          tls_host: chainmaker.org
+          ca_paths:
+          remotes: testnode.chainmakernet.com:17301

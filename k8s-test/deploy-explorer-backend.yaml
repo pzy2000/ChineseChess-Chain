@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: explorer-backend-testnet
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: explorer-backend-testnet
+  template:
+    metadata:
+      labels:
+        app: explorer-backend-testnet
+    spec:
+#      affinity:
+#        nodeAffinity:
+#          requiredDuringSchedulingIgnoredDuringExecution:
+#            nodeSelectorTerms:
+#              - matchExpressions:
+#                  - key: kubernetes.io/hostname
+#                    operator: NotIn
+#                    values:
+#                      - worker218
+      containers:
+        - name: explorer-backend-testnet
+          image: chainmaker1.tencentcloudcr.com/opennet/chainmaker-explorer-backend:develop_dongxuliang
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 16660
+              name: pprof
+          volumeMounts:
+            - name: configmap-config-volume
+              mountPath: /chainmaker-explorer-backend/configs
+            - name: configmap-client-volume
+              mountPath: /chainmaker-explorer-backend/configs/crypto-config/node1/user/client1
+      volumes:
+        - name: configmap-config-volume
+          configMap:
+            name: configmap-config
+        - name: configmap-client-volume
+          configMap:
+            name: configmap-client
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: explorer-backend-testnet-service
+spec:
+  selector:
+    app: explorer-backend-testnet
+  ports:
+    - name: main-port
+      protocol: TCP
+      port: 17774
+      targetPort: 9999
+    - name: pprof
+      protocol: TCP
+      port: 16660
+      targetPort: 16660
+      nodePort: 31100
+  type: NodePort

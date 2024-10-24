@@ -1,0 +1,12 @@
+{
+  "UserAddr": "171262347a59fded92021a32421a5dad05424e03",
+  "UserId": "client1.sign.wx-org1.chainmaker.org",
+  "HasCert": true,
+  "CertCommonName": "client1.sign.wx-org1.chainmaker.org",
+  "CertOrganization": [
+    "wx-org1.chainmaker.org"
+  ],
+  "CertOrganizationUnit": [
+    "client"
+  ]
+}

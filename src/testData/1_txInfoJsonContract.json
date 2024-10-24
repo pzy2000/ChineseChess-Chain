@@ -1,0 +1,58 @@
+{
+  "payload": {
+    "chain_id": "chain1",
+    "tx_id": "17a05bc8a43ac809caab94b4e287d585b37cd84b36f44c88a6ee11e843fc4156",
+    "timestamp": 1702461576,
+    "contract_name": "CONTRACT_MANAGE",
+    "method": "INIT_CONTRACT",
+    "parameters": [
+      {
+        "key": "categoryName",
+        "value": "dGVzdA=="
+      },
+      {
+        "key": "categoryURI",
+        "value": "Y2hhaW5tYWtlci5vcmcuY24v"
+      },
+      {
+        "key": "admin",
+        "value": "MTcxMjYyMzQ3YTU5ZmRlZDkyMDIxYTMyNDIxYTVkYWQwNTQyNGUwMw=="
+      },
+      {
+        "key": "CONTRACT_NAME",
+        "value": "Z29FcmM3MjFfMg=="
+      },
+      {
+        "key": "CONTRACT_VERSION",
+        "value": "MS4w"
+      },
+      {
+        "key": "CONTRACT_RUNTIME_TYPE",
+        "value": "RE9DS0VSX0dP"
+      },
+      {
+        "key": "CONTRACT_BYTECODE",
+        "value": "bWQ1OmZjOTlkYTAzOWU4YzgzYTkyZmJmNTRmMzAxMjY3ODJh"
+      }
+    ],
+    "limit": {
+      "gas_limit": 20000
+    }
+  },
+  "sender": {
+    "signer": {
+      "org_id": "wx-org1.chainmaker.org",
+      "member_type": 1,
+      "member_info": "LK4/KplYsQcFU2All0UxorspVALdt/tgHuZ8QxiME2M="
+    },
+    "signature": "MEUCIQDoEY70nDwAbyaBeAbx4rw0qKwbrQpLPAr3TgXmy2JLyQIgLp3VhirMBjnr4hJfZmgbNS0ADdT1ZXt2mM6sq3Oi7r0="
+  },
+  "result": {
+    "contract_result": {
+      "result": "Cgpnb0VyYzcyMV8yEgMxLjAYCCqrAQoWd3gtb3JnMS5jaGFpbm1ha2VyLm9yZxABGiAsrj8qmVixBwVTYCWXRTGiuylUAt23+2Ae5nxDGIwTYyIjY2xpZW50MS5zaWduLnd4LW9yZzEuY2hhaW5tYWtlci5vcmcqBkNMSUVOVDJAMjhlMjVhNjMwZGJlNjkyNjAwNmM2YzBiMmVmNjJhYjQwNTJlNTZjZjBlYzFmZjdmZGRjZDJlMjNjZDliNDY0YTIoZDRjNmI5NGYzNmRkNmE1MTRiY2E4MjcxNTE4NjMyMzcwZjUyMjA4NA==",
+      "message": "Success",
+      "gas_used": 13068
+    },
+    "rw_set_hash": "CJzRRjrqNk3GeNxLH74Qq93rZixTGhLkhK3Iz7fhYfw="
+  }
+}
